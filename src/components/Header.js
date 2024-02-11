@@ -11,9 +11,11 @@ const Header = () => {
         <div>
           <RxHamburgerMenu size={24} />
         </div>
-        <div>
-          <img src={LOGO_URL} alt="logo" className="w-28" />
-        </div>
+        <a href={`/`}>
+          <div>
+            <img src={LOGO_URL} alt="logo" className="w-28" />
+          </div>
+        </a>
       </div>
 
       <div className="col-span-10  items-center justify-center flex">
