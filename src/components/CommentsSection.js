@@ -2,13 +2,13 @@ import React, { useEffect, useState } from "react";
 import { YOUTUBE_API_KEY } from "../utils/constants";
 import { timeAgo } from "../utils/reusableFuntions";
 
-const CommentsSection = () => {
+const CommentsSection = ({ videoId }) => {
   const [comments, setComments] = useState(null);
 
   const getCommentsList = async () => {
     try {
       const response = await fetch(
-        `https://youtube.googleapis.com/youtube/v3/commentThreads?part=snippet&videoId=Ks-_Mh1QhMc&key=${YOUTUBE_API_KEY}`
+        `https://youtube.googleapis.com/youtube/v3/commentThreads?part=snippet&videoId=${videoId}&key=${YOUTUBE_API_KEY}`
       );
       // YOUTUBE ID
 
@@ -27,7 +27,7 @@ const CommentsSection = () => {
 
   if (!comments) return null;
   return (
-    <div className="flex flex-col w-96">
+    <div className="flex flex-col ">
       <h1>Comments count</h1>
       {/* map on coments */}
 
@@ -47,7 +47,7 @@ const CommentsSection = () => {
                 {timeAgo(comment.snippet.topLevelComment.snippet.publishedAt)}
               </h6>
             </div>
-            <p className="w-[65rem] ">
+            <p className=" ">
               {comment.snippet.topLevelComment.snippet.textDisplay}
             </p>
           </div>

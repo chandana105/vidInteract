@@ -3,12 +3,20 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import { LOGO_URL } from "../utils/constants";
 import { IoIosSearch } from "react-icons/io";
 import { CgProfile } from "react-icons/cg";
+import { useDispatch } from "react-redux";
+import { toggleMenu } from "../utils/appSlice";
 
 const Header = () => {
+  const dispatch = useDispatch();
+
+  const handleToggleMenu = () => {
+    dispatch(toggleMenu());
+  };
+
   return (
-    <div className="grid grid-flow-col px-8 shadow-lg bg-white items-center ">
+    <div className="grid grid-flow-col px-8 py-1 shadow-lg bg-white items-center ">
       <div className="flex col-span-1 items-center gap-3   ">
-        <div>
+        <div onClick={handleToggleMenu} className="cursor-pointer">
           <RxHamburgerMenu size={24} />
         </div>
         <a href={`/`}>

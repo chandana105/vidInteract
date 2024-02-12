@@ -1,7 +1,12 @@
 import React from "react";
 import { TiHome } from "react-icons/ti";
+import { useSelector } from "react-redux";
 
 const Sidebar = () => {
+  const isMenuOpen = useSelector((store) => store.app.isMenuOpen);
+
+  if (!isMenuOpen) return null;
+
   return (
     <div className="col-span-1 shadow-lg ">
       <ul className="p-6">

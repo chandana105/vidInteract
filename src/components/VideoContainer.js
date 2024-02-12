@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import VideoCard from "./VideoCard";
 import { YOUTUBE_FETCH_URL } from "../utils/constants";
+import { Link } from "react-router-dom";
 
 const VideoContainer = () => {
   const [videos, setVideos] = useState(null);
@@ -10,7 +11,6 @@ const VideoContainer = () => {
 
     const json = await response.json();
 
-    console.log(json.items);
     setVideos(json?.items);
   };
 
@@ -23,7 +23,9 @@ const VideoContainer = () => {
   return (
     <div className="flex flex-wrap gap-7 p-8">
       {videos.map((video) => (
-        <VideoCard video={video} key={video.id} />
+        <Link to={`/watch?v=${video.id}`} key={video.id}>
+          <VideoCard video={video} />
+        </Link>
       ))}
     </div>
   );

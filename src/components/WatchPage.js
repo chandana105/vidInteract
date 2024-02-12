@@ -1,20 +1,28 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import VideoPlaying from "./VideoPlaying";
 import CommentsSection from "./CommentsSection";
 import SuggestionsSection from "./SuggestionsSection";
+import { useDispatch } from "react-redux";
+import { closeMenu } from "../utils/appSlice";
 
 const WatchPage = () => {
   const [params] = useSearchParams();
   const videoId = params.get("v");
 
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(closeMenu());
+  }, []);
+
   return (
     <div className="grid grid-flow-col p-6">
       {/* vide playing */}
-      <div className="flex flex-col col-span-8   ">
+      <div className="flex flex-col col-span-8 w-[85%]   ">
         <VideoPlaying videoId={videoId} />
         {/* comments */}
-        <CommentsSection />
+        <CommentsSection videoId={videoId} />
       </div>
       {/* suggestions of videos */}
       <SuggestionsSection />
