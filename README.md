@@ -2,8 +2,8 @@
 
 - Requirements and Planning of Application.
 - created structure of app (all components) in vscode
-- ## HOME PAGE
 
+- ## HOME PAGE
   - Designed header
   - designed sidebar
   - diesigned video container (containing video cards)
@@ -12,6 +12,7 @@
   - collapsing of sidebar (APP slice)
   - setup react router
   - navigating to watch page by clicking on particualar video card
+  - making AD card using the concept of HOC
 
 - ## WATCH PAGE
   - Divided page into grid for video playing and suggestions.
