@@ -3,19 +3,28 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import { LOGO_URL, YOUTUBE_SUGGESTIONS_API } from "../utils/constants";
 import { IoIosSearch } from "react-icons/io";
 import { CgProfile } from "react-icons/cg";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { toggleMenu } from "../utils/appSlice";
+import { cacheResults } from "../utils/searchSlice";
 
 const Header = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [searchSuggestions, setSearchSuggestions] = useState([]);
   const [showSuggestions, setShowSuggestions] = useState(false);
-
+  const searchCache = useSelector((store) => store.search);
   const dispatch = useDispatch();
 
   const handleToggleMenu = () => {
     dispatch(toggleMenu());
   };
+
+  // this is how our search cache will llook like
+  /**
+   *
+   * searchCache =  {
+   *  "iphone" : ["iphone11" , "iphone pro max"]
+   * }
+   */
 
   useEffect(() => {
     // API CALL
@@ -25,7 +34,15 @@ const Header = () => {
     // but ifthe diff btw 2 API calls is <200ms
     // decline the API call
 
-    const timer = setTimeout(() => getSearchSuggestions(), 200);
+    const timer = setTimeout(() => {
+      if (searchCache[searchQuery]) {
+        // then set the result of searchCache[searchQuery] direclty
+        setSearchSuggestions(searchCache[searchQuery]);
+      } else {
+        // if its not present in cache , i should make an apio calland update my cache
+        getSearchSuggestions();
+      }
+    }, 200);
 
     return () => {
       clearTimeout(timer);
@@ -39,6 +56,9 @@ const Header = () => {
     const json = await response.json();
 
     setSearchSuggestions(json[1]);
+
+    // update cache
+    dispatch(cacheResults({ [searchQuery]: json[1] }));
 
     // console.log(json[1]);
   };
@@ -96,3 +116,41 @@ const Header = () => {
 };
 
 export default Header;
+
+// now 2 more concepts
+// 1. on clicking back button on written search query :- its still making api call :- need to fix
+// 2. also to do caching of search query  (we 'll use redux as a cache)
+
+/**
+ * when i search for this :- "iphone"
+ * search suggestions 1
+ * search suggestions 2
+ * search suggestions 3
+ * search suggestions 4
+ *
+ *   so it will store the search resilts of my api call into store and everytime i am tryign for same keyword again
+ * supose we have seen in "API REUSLTS :-  SEARCH QUERY" :- it gives api results - ip
+ * so if my ip pr jo search siuggestiosn aaye the unko redux mein store krliya hai then
+ * agr dobara mai ip krrhi then no api call will made else cached search resutls will be shown to user
+ *
+ */
+
+// if(cache is there in redux) {
+//   // sida suggestions set kro jo hum api call kre baad maarte the yhaa ndirect kro
+//   setSearchSuggestions(set the data from cache);
+//  } else {
+//   getSearchSuggestions()
+//  }
+
+// dispatch(cacheResults({ [searchQuery]: json[1] }));
+// will send in a nobj and key of an obje is [searchquery] and suggestiosn jo abhi set nhi hue ya aaye hain json[1]
+
+// now 2 more concepts
+// 1. on clicking back button on written search query :- its still making api call :- need to fix
+// 2. also to do caching of search query  (we 'll use redux as a cache)
+
+// PUTTING IN REDUX (IE CACHING) :- IT SOLVED BACK BUTTON ISSUE ALSO , on some it made coz it might have not cached it
+
+// not to clear the store , coz in one session , how much u can search, if searchign for lakhs of time , then its bad to store it else fine
+// for that we can use LRU  cache = leat recent used
+// ie we can keep the store capacity to [100] as sson as search sotre reaches 100 keys , start removing fro mtop

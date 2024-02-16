@@ -4,6 +4,7 @@
 - created structure of app (all components) in vscode
 
 - ## HOME PAGE
+
   - Designed header
   - designed sidebar
   - diesigned video container (containing video cards)
@@ -15,27 +16,35 @@
   - making AD card using the concept of HOC
 
 - ## WATCH PAGE
+
   - Divided page into grid for video playing and suggestions.
   - useSearchParams :- for playing video
   - fetched video details (youtube video api)
   - comments threads api (created and designed comments section)
 
+- ## HOME PAGE :- SEARCH BAR
+  well organised/optimised search
+  - search is using live youtube suggestions api
+  - search is using debouncing
+  - search is using caching
+
 ## FEATURES
 
 - ## Home Page
-   - Header
-     - search bar
-   - Sidebar
-   - Main Container 
-     - Filter list
-     - video container
-       - video cards
+
+  - Header
+    - search bar
+  - Sidebar
+  - Main Container
+    - Filter list
+    - video container
+      - video cards
 
 - ## Watch Page
-   - Header
-   - Watch Container
-     - video playing
-       - video detials
-     - comments
-       - comments threads
-     - suggestions 
+  - Header
+  - Watch Container
+    - video playing
+      - video detials
+    - comments
+      - comments threads
+    - suggestions
