@@ -59,8 +59,6 @@ const Header = () => {
 
     // update cache
     dispatch(cacheResults({ [searchQuery]: json[1] }));
-
-    // console.log(json[1]);
   };
 
   return (

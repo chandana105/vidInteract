@@ -57,3 +57,4 @@ export default App;
 //  TODO: CAN PUT SHIMMER UI
 // TODO: TO PUT SCROLL ON FILTERS LIST
 // TODO: TO MAKE HEADER and sidebar fixed and only scroll the main container same in watch page
+//  TODO: ON SEARCH SUGGESTION, CLICK ANDFETCH SEARCH API FOR THAT AND SHOW RESULTS
