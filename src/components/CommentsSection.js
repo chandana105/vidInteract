@@ -1,60 +1,51 @@
-import React, { useEffect, useState } from "react";
-import { YOUTUBE_API_KEY } from "../utils/constants";
-import { timeAgo } from "../utils/reusableFuntions";
+import React from "react";
+import Comment from "./Comment";
+import { commentsData } from "../utils/constants";
 
-const CommentsSection = ({ videoId }) => {
-  const [comments, setComments] = useState(null);
+const CommentsList = ({ comments }) => {
+  return comments.map((comment, index) => (
+    <div key={index}>
+      <Comment comment={comment} />
+      <div className="pl-5 border-2 border-l-black ml-5">
+        <CommentsList comments={comment.replies} key={comment.replies.id} />
+      </div>
+    </div>
+  ));
+};
 
-  const getCommentsList = async () => {
-    try {
-      const response = await fetch(
-        `https://youtube.googleapis.com/youtube/v3/commentThreads?part=snippet&videoId=${videoId}&key=${YOUTUBE_API_KEY}`
-      );
-      // YOUTUBE ID
-
-      const json = await response.json();
-
-      console.log(json.items);
-      setComments(json?.items);
-    } catch (err) {
-      console.log(err);
-    }
-  };
-
-  useEffect(() => {
-    getCommentsList();
-  }, []);
-
-  if (!comments) return null;
+const CommentsSection = () => {
   return (
     <div className="flex flex-col ">
-      <h1>Comments count</h1>
-      {/* map on coments */}
-
-      {comments.map((comment) => (
-        <div className="flex gap-3 py-4" key={comment.id}>
-          <img
-            src={comment.snippet.topLevelComment.snippet.authorProfileImageUrl}
-            alt="thumbnail"
-            className="rounded-full w-10 h-10 "
-          />
-          <div className="">
-            <div className="flex gap-2 items-center">
-              <h2>
-                {comment.snippet.topLevelComment.snippet.authorDisplayName}
-              </h2>
-              <h6 className="text-sm text-slate-500">
-                {timeAgo(comment.snippet.topLevelComment.snippet.publishedAt)}
-              </h6>
-            </div>
-            <p className=" ">
-              {comment.snippet.topLevelComment.snippet.textDisplay}
-            </p>
-          </div>
-        </div>
-      ))}
+      <h1 className="text-lg font-bold">Comments :</h1>
+      <CommentsList comments={commentsData} />
     </div>
   );
 };
 
 export default CommentsSection;
+
+// in original youtube :- these comments are just 2 levels deep
+// one is the base level , other is the rpeliies to it
+// if u reply to one of the replies , it ll just come over in the same repleis section
+// its not n level nestign :- it ll show just @repliedtousername comment.
+
+// very imp interview ques :- t obuild n level nestign comments
+// eg :- in redit app it is there  (it ll focus on UI, data structure, recursion knowledge)
+
+// i ll use recusrion to loop in rpeleis
+
+// these rpeleis are list of comments at the end of the day
+
+// const CommentsList = ({ comments }) => {
+//   return comments.map((comment) => (
+//     <div>
+//       <Comment comment={comment} key={comment.id} />
+//       <div className="pl-5 border-2 border-l-black ml-5">
+
+//         <Comment comment={comment} key={comment.id} />
+//         <Comment comment={comment} key={comment.id} />
+//         <Comment comment={comment} key={comment.id} />
+//       </div>
+//     </div>
+//   ));
+// };

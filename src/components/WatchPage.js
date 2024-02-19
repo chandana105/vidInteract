@@ -20,7 +20,7 @@ const WatchPage = () => {
     <div className="grid grid-cols-12 p-6">
       <div className="flex flex-col col-span-9    ">
         <VideoPlaying videoId={videoId} />
-        <CommentsSection videoId={videoId} />
+        <CommentsSection />
       </div>
       <SuggestionsSection />
     </div>

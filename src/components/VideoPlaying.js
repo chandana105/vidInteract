@@ -12,7 +12,6 @@ const VideoPlaying = ({ videoId }) => {
         `https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id=${videoId}&key=${YOUTUBE_API_KEY}`
       );
       const json = await response.json();
-      console.log(json);
       setVideoDetail(json.items[0]);
     } catch (err) {
       console.log(err);
@@ -24,8 +23,6 @@ const VideoPlaying = ({ videoId }) => {
   }, [videoId]);
 
   if (!videoDetail) return null;
-
-  console.log(videoDetail, "vd");
 
   return (
     <div className="">

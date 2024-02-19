@@ -28,4 +28,17 @@ const VideoCard = ({ video }) => {
   );
 };
 
+export const AdVideoCard = ({ video }) => {
+  return (
+    <div className=" border-2 border-gray-800">
+      <VideoCard video={video} />
+    </div>
+  );
+};
+
 export default VideoCard;
+
+// higher-order component is a FUNCTION that takes a component and returns a new component.
+
+// why needed HOC :- sup[pose u need a small  thing over a video card , suppose with border or an advertisemnt like in youtube it shows
+// hoc basically takes an excitign comp and modifies a little 
