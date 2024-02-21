@@ -1,19 +1,14 @@
-import React from "react";
-
-const LiveComment = ({ name, message }) => {
+const ChatMessage = ({ name, message }) => {
   return (
-    <div className="flex  justify-center shadow-sm p-2 bg-white mb-1">
+    <div className="flex items-center shadow-sm p-2 ">
       <img
-        src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
-        alt="thumbnail"
-        className="rounded-full h-8 "
+        className="h-8"
+        alt="user"
+        src="https://www.iconpacks.net/icons/2/free-user-icon-3296-thumb.png"
       />
-      <div className="ml-2">
-        <span className=" tex-lg text-slate-400 mr-2">{name}</span>
-        <span>{message}</span>
-      </div>
+      <span className="font-bold px-2">{name}</span>
+      <span>{message}</span>
     </div>
   );
 };
-
-export default LiveComment;
+export default ChatMessage;

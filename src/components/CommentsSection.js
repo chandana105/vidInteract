@@ -1,6 +1,6 @@
 import React from "react";
 import Comment from "./Comment";
-import { commentsData } from "../utils/constants";
+import { commentsData } from "../utils/helper";
 
 const CommentsList = ({ comments }) => {
   return comments.map((comment, index) => (
