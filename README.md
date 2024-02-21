@@ -28,6 +28,13 @@
   - search is using debouncing
   - search is using caching
 
+- ## WATCH PAGE :- LIVE CHAT
+  well organised/optimised LIVE CHAT
+  - live chat is using API POOLING
+  - data layer of live chat is set using redux
+  - using setInterval for api pooling
+  - sending dummy chat message
+
 ## FEATURES
 
 - ## Home Page
