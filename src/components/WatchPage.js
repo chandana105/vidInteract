@@ -2,9 +2,9 @@ import React, { useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import VideoPlaying from "./VideoPlaying";
 import CommentsSection from "./CommentsSection";
-import SuggestionsSection from "./SuggestionsSection";
 import { useDispatch } from "react-redux";
 import { closeMenu } from "../utils/appSlice";
+import LiveChat from "./LiveChat";
 
 const WatchPage = () => {
   const [params] = useSearchParams();
@@ -22,7 +22,7 @@ const WatchPage = () => {
         <VideoPlaying videoId={videoId} />
         <CommentsSection />
       </div>
-      <SuggestionsSection />
+      <LiveChat />
     </div>
   );
 };

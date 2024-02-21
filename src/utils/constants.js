@@ -175,3 +175,11 @@ export const commentsData = [
     ],
   },
 ];
+
+export const liveComments = [
+  {
+    id: 1,
+    name: "Chandana Mahajan",
+    comment: "hey, today is bright day. I want a job at earliest as possible.",
+  },
+];
