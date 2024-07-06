@@ -3,7 +3,7 @@ import { useSearchParams } from "react-router-dom";
 import VideoPlaying from "./VideoPlaying";
 import CommentsSection from "./CommentsSection";
 import { useDispatch } from "react-redux";
-import { closeMenu } from "../utils/appSlice";
+import { closeMenu } from "../../store/appSlice";
 import LiveChat from "./LiveChat";
 
 const WatchPage = () => {

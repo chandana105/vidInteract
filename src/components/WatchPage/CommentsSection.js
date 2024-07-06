@@ -1,6 +1,6 @@
 import React from "react";
 import Comment from "./Comment";
-import { commentsData } from "../utils/helper";
+import { commentsData } from "../../utils/helper";
 
 const CommentsList = ({ comments }) => {
   return comments.map((comment, index) => (
@@ -23,4 +23,3 @@ const CommentsSection = () => {
 };
 
 export default CommentsSection;
-

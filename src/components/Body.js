@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import Sidebar from "./Sidebar";
 import { Outlet, useLocation } from "react-router-dom";
-import { openMenu } from "../utils/appSlice";
+import { openMenu } from "../store/appSlice";
 import { useDispatch } from "react-redux";
 
 const Body = () => {

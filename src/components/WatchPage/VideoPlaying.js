@@ -1,26 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { SlLike, SlDislike } from "react-icons/sl";
-import { YOUTUBE_API_KEY } from "../utils/constants";
-import { formatViewCount, timeAgo } from "../utils/reusableFuntions";
+import { formatViewCount, timeAgo } from "../../utils/reusableFuntions";
+import useGetVideoDetails from "../../hooks/useGetVideoDetails";
 
 const VideoPlaying = ({ videoId }) => {
-  const [videoDetail, setVideoDetail] = useState();
-  // getting the video details from videoid
-  const getVideoDetail = async (videoId) => {
-    try {
-      const response = await fetch(
-        `https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id=${videoId}&key=${YOUTUBE_API_KEY}`
-      );
-      const json = await response.json();
-      setVideoDetail(json.items[0]);
-    } catch (err) {
-      console.log(err);
-    }
-  };
-
-  useEffect(() => {
-    getVideoDetail(videoId);
-  }, [videoId]);
+  const { videoDetail } = useGetVideoDetails(videoId);
 
   if (!videoDetail) return null;
 
@@ -65,7 +49,7 @@ const VideoPlaying = ({ videoId }) => {
       </div>
 
       {/* descripton */}
-      <div className="bg-black bg-opacity-50 w-full rounded-lg p-2 my-2">
+      <div className="bg-black bg-opacity-20 w-full rounded-lg p-2 my-2">
         <p>
           {formatViewCount(videoDetail?.statistics?.viewCount)} views{" "}
           {timeAgo(videoDetail?.snippet?.publishedAt)}

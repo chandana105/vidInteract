@@ -1,5 +1,5 @@
 import React from "react";
-import { formatViewCount, timeAgo } from "../utils/reusableFuntions";
+import { formatViewCount, timeAgo } from "../../utils/reusableFuntions";
 
 const VideoCard = ({ video }) => {
   return (
@@ -37,8 +37,3 @@ export const AdVideoCard = ({ video }) => {
 };
 
 export default VideoCard;
-
-// higher-order component is a FUNCTION that takes a component and returns a new component.
-
-// why needed HOC :- sup[pose u need a small  thing over a video card , suppose with border or an advertisemnt like in youtube it shows
-// hoc basically takes an excitign comp and modifies a little 

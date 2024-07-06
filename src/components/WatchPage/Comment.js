@@ -1,6 +1,6 @@
 import React from "react";
 import { CgProfile } from "react-icons/cg";
-import { timeAgo } from "../utils/reusableFuntions";
+import { timeAgo } from "../../utils/reusableFuntions";
 
 const Comment = ({ comment }) => {
   return (
@@ -18,6 +18,5 @@ const Comment = ({ comment }) => {
     </div>
   );
 };
-
 
 export default Comment;
