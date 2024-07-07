@@ -2,7 +2,6 @@ import React from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { LOGO_URL } from "../utils/constants";
 import { IoIosSearch } from "react-icons/io";
-import { CgProfile } from "react-icons/cg";
 
 import useSearch from "../hooks/useSearch";
 
@@ -58,10 +57,6 @@ const Header = () => {
             ))}
           </ul>
         )}
-      </div>
-
-      <div className="col-span-1">
-        <CgProfile size={30} className="self-end" />
       </div>
     </div>
   );

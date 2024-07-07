@@ -21,7 +21,7 @@ const VideoPlaying = ({ videoId }) => {
         <h2 className="text-xl font-bold">{videoDetail?.snippet?.title}</h2>
       </div>
       <div className="flex justify-between">
-        <div className="flex gap-3 w-96 pt-2 ">
+        <div className="flex gap-3 w-96 pt-2 items-center ">
           <img
             src={"https://i.ytimg.com/vi/Ks-_Mh1QhMc/default.jpg"}
             alt="thumbnail"
@@ -31,7 +31,6 @@ const VideoPlaying = ({ videoId }) => {
             <h2 className="text-base font-semibold">
               {videoDetail?.snippet?.channelTitle}
             </h2>
-            <p>channel subscriber count</p>
           </div>
         </div>
 
@@ -50,10 +49,11 @@ const VideoPlaying = ({ videoId }) => {
 
       {/* descripton */}
       <div className="bg-black bg-opacity-20 w-full rounded-lg p-2 my-2">
-        <p>
+        <p className="font-bold">
           {formatViewCount(videoDetail?.statistics?.viewCount)} views{" "}
           {timeAgo(videoDetail?.snippet?.publishedAt)}
         </p>
+        <div className="h-4"></div>
         <p>{videoDetail?.snippet?.description}</p>
       </div>
     </div>
