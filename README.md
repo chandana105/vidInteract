@@ -47,3 +47,5 @@ VidInteract is a comprehensive video platform featuring video listings, real-tim
   - Mock Data: The comments are generated using mock data, with replies stored as arrays of comments.
   - Recursion: The comments list is rendered recursively. Each comment can have a list of replies, which are also comments, leading to a nested, pyramid-like structure.
   - UI and Data Structure: This feature combines UI design with data structure concepts, showcasing recursion for rendering comments and their replies.
+
+# Screenshots
