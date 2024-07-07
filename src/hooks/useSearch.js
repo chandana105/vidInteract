@@ -15,16 +15,13 @@ const useSearch = () => {
     dispatch(toggleMenu());
   };
 
-  const getSearchSuggestions = async () => {
+  const getSearchSuggestions = useCallback(async () => {
     const response = await fetch(YOUTUBE_SUGGESTIONS_API + searchQuery);
-
     const json = await response.json();
-
     setSearchSuggestions(json[1]);
-
-    // update cache  (if search suggestions not present i ncache, make an api call )
+    // update cache  (if search suggestions not present in cache, make an api call )
     dispatch(cacheResults({ [searchQuery]: json[1] }));
-  };
+  }, [dispatch, searchQuery]);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -38,7 +35,7 @@ const useSearch = () => {
     return () => {
       clearTimeout(timer);
     };
-  }, [searchQuery, searchCache]);
+  }, [searchQuery, searchCache, getSearchSuggestions]);
 
   return {
     handleToggleMenu,
