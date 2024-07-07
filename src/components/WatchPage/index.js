@@ -14,7 +14,7 @@ const WatchPage = () => {
 
   useEffect(() => {
     dispatch(closeMenu());
-  }, []);
+  }, [dispatch]);
 
   return (
     <div className="grid grid-cols-12 p-6">

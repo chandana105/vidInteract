@@ -22,7 +22,7 @@ const useLiveChat = () => {
     return () => {
       clearInterval(timer);
     };
-  }, []);
+  }, [dispatch]);
 
   return { chatMessages, userChatMessage, setUserChatMessage };
 };
