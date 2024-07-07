@@ -45,7 +45,7 @@ const Header = () => {
         </div>
         {/* ITS A PERFORMANT SEARCH, making less api calls  */}
         {showSuggestions && searchQuery && (
-          <ul className="absolute top-14   w-[39.5%] py-2  rounded-lg px-4 shadow-xl bg-white">
+          <ul className="absolute top-14   w-[43%] py-2  rounded-lg px-4 shadow-xl bg-white">
             {searchSuggestions.map((suggestion) => (
               <li
                 className="border-b  py-1 flex items-center gap-2 hover:bg-gray-100 "
