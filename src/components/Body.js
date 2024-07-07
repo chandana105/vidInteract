@@ -1,14 +1,25 @@
-import React from 'react'
-import Sidebar from './Sidebar'
-import MainContainer from './MainContainer'
+import React, { useEffect } from "react";
+import Sidebar from "./Sidebar";
+import { Outlet, useLocation } from "react-router-dom";
+import { openMenu } from "../store/appSlice";
+import { useDispatch } from "react-redux";
 
 const Body = () => {
-  return (
-    <div className='grid grid-flow-col'>
-      <Sidebar />
-      <MainContainer />
-    </div>
-  )
-}
+  const dispatch = useDispatch();
+  const location = useLocation();
 
-export default Body
+  useEffect(() => {
+    // Open the menu only when the route is "/"
+    if (location.pathname === "/") {
+      dispatch(openMenu());
+    }
+  }, [dispatch, location.pathname]);
+  return (
+    <div className="grid grid-flow-col">
+      <Sidebar />
+      <Outlet />
+    </div>
+  );
+};
+
+export default Body;

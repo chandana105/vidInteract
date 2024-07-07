@@ -1,70 +1,49 @@
-# Getting Started with Create React App
+# VidInteract - Video Platform for Seamless Interaction
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+VidInteract is a comprehensive video platform featuring video listings, real-time chat, nested comments, and powerful search functionality, inspired by YouTube. Built with Reactjs, Redux Toolkit, and TailwindCSS.
 
-## Available Scripts
+- Live demo: [fooditnow](https://fooditnow.netlify.app/)
 
-In the project directory, you can run:
+# Tech Stack
 
-### `npm start`
+- Reactjs: JavaScript library for building user interfaces.
+- Redux Toolkit: State management library for handling application state.
+- React Router DOM: Declarative routing for React applications.
+- TailwindCSS: Utility-first CSS framework for rapid UI development.
+- React Icons: Library of popular icons for React applications.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Features
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+#### Video List Page / Home Page
 
-### `npm test`
+- Rendering list of videos using YouTube Video API.
+- Showing the concept of Higher Order Component (HOC) by making Advertisement Card.
+- SearchBar: A well-organized and optimized search that shows suggestions using YouTube search suggestions API.
+  - #### Live Search using YouTube Suggestions API:
+    As users type in the search bar, real-time suggestions are fetched from the YouTube search suggestions API to provide relevant options.
+  - #### Search with Debouncing:
+    Debouncing is implemented to reduce the number of API calls by waiting for a short period (e.g., 200ms) before making a request, ensuring that rapid keystrokes do not trigger excessive API calls.
+  - #### Caching Search Results:
+    Search results are cached using Redux. If a user searches for the same term again, the results are retrieved from the cache, speeding up the response and reducing server load.
+  - #### Performance-Efficient Search Implementation:
+    By combining debouncing and caching, the search functionality is optimized for performance, providing a smooth and responsive user experience.
+- Collapsing Sidebar.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### Watch Page
 
-### `npm run build`
+- Playing the video selected on home page by fetching videos details from the query params by using useSearchParams and showing the video details.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Live Chat Feature (using mock data) :
+  - #### Real-Time Interaction:
+    The live chat feature allows users to interact in real-time by sending dummy chat messages.
+  - #### API Polling:
+    The chat system uses API polling to fetch new messages at regular intervals, ensuring the chat is updated without overloading the server.
+  - #### Efficient Data Management:
+    - Data Layer: The chat data is managed with Redux, ensuring efficient state management and a responsive UI.
+    - Use of setInterval: The chat system employs setInterval to poll the server for new messages every few seconds, appending new messages to the chat log.
+    - Optimized Performance: To prevent UI freezes, the chat log maintains a fixed length by splicing old messages and appending new ones, ensuring smooth performance even during heavy usage.
+- #### Comments Section :
+  - Nested Comments: The comments section supports multi-level nested comments, allowing users to reply to replies, creating a tree structure.
+  - Mock Data: The comments are generated using mock data, with replies stored as arrays of comments.
+  - Recursion: The comments list is rendered recursively. Each comment can have a list of replies, which are also comments, leading to a nested, pyramid-like structure.
+  - UI and Data Structure: This feature combines UI design with data structure concepts, showcasing recursion for rendering comments and their replies.
