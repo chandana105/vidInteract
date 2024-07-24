@@ -50,12 +50,9 @@ VidInteract is a comprehensive video platform featuring video listings, real-tim
 
 
 # Screenshots
-<img width="1512" alt="Screenshot 2024-07-07 at 7 13 50 PM" src="https://github.com/chandana105/my-youtube/assets/39641650/6648bd6b-714c-4c1f-b3f3-b4cef6717d81">
-
-<img width="1512" alt="Screenshot 2024-07-07 at 7 14 04 PM" src="https://github.com/chandana105/my-youtube/assets/39641650/4b24ace2-50dc-42ca-8be0-6a1875d33fdc">
-
-<img width="1512" alt="Screenshot 2024-07-07 at 7 14 32 PM" src="https://github.com/chandana105/my-youtube/assets/39641650/1452ba24-3ef5-454d-a12c-120272e473d8">
-
-<img width="1512" alt="Screenshot 2024-07-07 at 7 14 46 PM" src="https://github.com/chandana105/my-youtube/assets/39641650/3135a516-a0d1-402b-b7dd-771dfee2f6c5">
+<img width="490" alt="Screenshot 2024-07-07 at 7 13 50 PM" src="https://github.com/chandana105/my-youtube/assets/39641650/6648bd6b-714c-4c1f-b3f3-b4cef6717d81">  &nbsp; 
+<img width="490" alt="Screenshot 2024-07-07 at 7 14 04 PM" src="https://github.com/chandana105/my-youtube/assets/39641650/4b24ace2-50dc-42ca-8be0-6a1875d33fdc">  &nbsp;
+<img width="490" alt="Screenshot 2024-07-07 at 7 14 32 PM" src="https://github.com/chandana105/my-youtube/assets/39641650/1452ba24-3ef5-454d-a12c-120272e473d8">  &nbsp;
+<img width="490" alt="Screenshot 2024-07-07 at 7 14 46 PM" src="https://github.com/chandana105/my-youtube/assets/39641650/3135a516-a0d1-402b-b7dd-771dfee2f6c5">  &nbsp; 
 
 
