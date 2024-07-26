@@ -16,7 +16,7 @@ const CommentsList = ({ comments }) => {
 const CommentsSection = () => {
   return (
     <div className="flex flex-col ">
-      <h1 className="text-lg font-bold">Comments :</h1>
+      <h1 className="text-base md:text-lg font-bold">Comments :</h1>
       <CommentsList comments={commentsData} />
     </div>
   );

@@ -5,10 +5,10 @@ import { timeAgo } from "../../utils/reusableFuntions";
 const Comment = ({ comment }) => {
   return (
     <div className="flex gap-3 py-4" key={comment.id}>
-      <CgProfile size={24} className="rounded-full  " />
+      <CgProfile size={24} className="rounded-full w-5 md:w-6  " />
       <div className="">
         <div className="flex gap-2 items-center">
-          <h2 className="text-base">{comment.username}</h2>
+          <h2 className="text-sm md:text-base">{comment.username}</h2>
           <h6 className="text-sm text-slate-500 ">
             {timeAgo("2024-02-16T10:11:20Z")}
           </h6>

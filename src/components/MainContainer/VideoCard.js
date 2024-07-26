@@ -7,20 +7,20 @@ const VideoCard = ({ video }) => {
       <img
         src={video.snippet.thumbnails?.medium?.url}
         alt="thumbnail"
-        className="rounded-lg w-96"
+        className="rounded-lg w-[100%] md:w-96"
       />
-      <div className="flex gap-3 w-96 pt-2 ">
+      <div className="flex gap-2 md:gap-3 w-[100%] md:w-96 pt-2 ">
         <img
           src={video.snippet.thumbnails?.default?.url}
           alt="thumbnail"
-          className="rounded-full w-10 h-10 "
+          className="rounded-full w-7 h-7 md:w-10 md:h-10 "
         />
         <div className="w-4/4">
-          <h2>{video.snippet.title}</h2>
-          <h3>{video.snippet.channelTitle}</h3>
+          <h2 className="text-sm md:text-base">{video.snippet.title}</h2>
+          <h3 className="text-sm md:text-base">{video.snippet.channelTitle}</h3>
           <div className="flex gap-2">
-            <p>{formatViewCount(video.statistics.viewCount)} views</p>
-            <p>{timeAgo(video.snippet.publishedAt)}</p>
+            <p className="text-sm md:text-base">{formatViewCount(video.statistics.viewCount)} views</p>
+            <p className="text-sm md:text-base">{timeAgo(video.snippet.publishedAt)}</p>
           </div>
         </div>
       </div>

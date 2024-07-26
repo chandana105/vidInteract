@@ -30,19 +30,19 @@ const VideoPlaying = ({ videoId }) => {
         allowFullScreen
       ></iframe>
       <div className="pt-3">
-        <h2 className="text-base md:text-xl font-bold">
+        <h2 className="text-sm md:text-xl font-bold">
           {videoDetail?.snippet?.title}
         </h2>
       </div>
-      <div className="flex justify-between">
+      <div className="flex justify-between mt-2 md:mt-0 items-center">
         <div className="flex gap-3 w-96 pt-2 items-center">
           <img
             src={"https://i.ytimg.com/vi/Ks-_Mh1QhMc/default.jpg"}
             alt="thumbnail"
-            className="rounded-full w-8 h-8 md:w-10 md:h-10"
+            className="rounded-full w-7 h-7 md:w-10 md:h-10"
           />
           <div className="w-4/4">
-            <h2 className="text-base font-semibold">
+            <h2 className="text-sm md:text-base font-semibold">
               {videoDetail?.snippet?.channelTitle}
             </h2>
           </div>
@@ -50,12 +50,12 @@ const VideoPlaying = ({ videoId }) => {
 
         <div className="items-center justify-center flex">
           <div className="w-[80%] flex items-center justify-center">
-            <button className="flex gap-2 rounded-l-3xl border-r-2 border-slate-100 p-2 px-5 bg-slate-200 text-base">
-              <SlLike size={24} className="w-5 md:w-full" />
+            <button className="flex items-center gap-2 rounded-l-3xl border-r-2 border-slate-100 p-2 px-5 bg-slate-200 text-sm md:text-base">
+              <SlLike size={24} className="w-4 md:w-5" />
               {formatViewCount(videoDetail?.statistics?.likeCount)}
             </button>
             <button className="rounded-r-3xl p-2 px-5 bg-slate-200">
-              <SlDislike size={24} className="w-5 md:w-full" />
+              <SlDislike size={24} className="w-4 md:w-5" />
             </button>
           </div>
         </div>
@@ -63,7 +63,7 @@ const VideoPlaying = ({ videoId }) => {
 
       {/* Description */}
       <div className="bg-black bg-opacity-20 w-full rounded-lg p-2 my-2">
-        <p className="font-bold text-base">
+        <p className="font-bold text-sm md:text-base">
           {formatViewCount(videoDetail?.statistics?.viewCount)} views{" "}
           {timeAgo(videoDetail?.snippet?.publishedAt)}
         </p>
@@ -72,7 +72,7 @@ const VideoPlaying = ({ videoId }) => {
           {isExpanded ? description : shortDescription}
         </p>
         {isLongDescription && (
-          <button onClick={toggleDescription} className="text-blue-500 mt-2">
+          <button onClick={toggleDescription} className="text-sm md:text-base text-blue-500 mt-2">
             {isExpanded ? "Show less" : "Show more"}
           </button>
         )}

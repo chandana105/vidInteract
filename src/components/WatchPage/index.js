@@ -26,7 +26,7 @@ const WatchPage = () => {
       </div>
 
       <div className="col-span-12 md:col-span-3 ml-1 mt-10 md:mt-0">
-        <h1 className="col-span-12  md:hidden text-lg font-bold  m-4">
+        <h1 className="col-span-12  md:hidden text-base font-bold  m-4">
           Live Chat
         </h1>
         <LiveChat />

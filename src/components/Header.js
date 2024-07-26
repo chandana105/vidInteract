@@ -20,20 +20,20 @@ const Header = () => {
 
   return (
     <div className="grid grid-flow-col px-8 py-1 shadow-lg bg-white items-center ">
-      <div className="flex col-span-1 items-center gap-3   ">
+      <div className="flex col-span-5  md:col-span-1 items-center gap-3   ">
         {size.width > 600 && (
           <div onClick={handleToggleMenu} className="cursor-pointer">
             <RxHamburgerMenu size={24} />
           </div>
         )}
         <a href={`/`}>
-          <div>
+          <div className="bg-pink-50">
             <img src={LOGO_URL} alt="logo" className="w-28" />
           </div>
         </a>
       </div>
 
-      <div className="col-span-10  items-center justify-between flex flex-col gap-10">
+      <div className="col-span-9 md:col-span-10  items-center justify-between flex flex-col gap-10">
         <div className="w-full md:w-[80%] flex items-center justify-center">
           <input
             type="text"
@@ -43,9 +43,9 @@ const Header = () => {
             onChange={(e) => setSearchQuery(e.target.value)}
             onFocus={() => setShowSuggestions(true)}
             onBlur={() => setShowSuggestions(false)}
-            className="border-2 w-[60%] p-2 px-4 rounded-l-3xl border-slate-200 "
+            className="border-2 w-[60%] p-1 md:p-2 px-4 rounded-l-3xl border-slate-200 "
           />
-          <button className="rounded-r-3xl border-y-2 border-r-2  p-2  md:w-[8%] pl-2 pr-2 md:pl-5 md:pr-5 bg-slate-200">
+          <button className="rounded-r-3xl border-y-2 border-r-2  p-1 md:p-2  md:w-[8%] pl-2 pr-2 md:pl-5 md:pr-5 bg-slate-200">
             <IoIosSearch size={24} className="w-5 md:w-full" />
           </button>
         </div>

@@ -32,11 +32,11 @@ const LiveChat = () => {
         <input
           type="text"
           placeholder="Say something...😁"
-          className="p-2 border-2 border-gray-400 rounded-md w-9/12"
+          className="p-2 border-2 border-gray-400 rounded-md w-9/12 text-sm md:text-base"
           value={userChatMessage}
           onChange={(e) => setUserChatMessage(e.target.value)}
         />
-        <button className="bg-blue-400 px-6 py-2 rounded-md text-white">
+        <button className="bg-blue-400 px-6 py-2 rounded-md text-white text-sm md:text-base">
           Send
         </button>
       </form>
