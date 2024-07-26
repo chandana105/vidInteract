@@ -8,12 +8,12 @@ const Comment = ({ comment }) => {
       <CgProfile size={24} className="rounded-full  " />
       <div className="">
         <div className="flex gap-2 items-center">
-          <h2>{comment.username}</h2>
-          <h6 className="text-sm text-slate-500">
+          <h2 className="text-base">{comment.username}</h2>
+          <h6 className="text-sm text-slate-500 ">
             {timeAgo("2024-02-16T10:11:20Z")}
           </h6>
         </div>
-        <p className=" ">{comment.comment}</p>
+        <p className=" text-sm">{comment.comment}</p>
       </div>
     </div>
   );

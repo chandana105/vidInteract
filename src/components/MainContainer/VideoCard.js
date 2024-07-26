@@ -3,7 +3,7 @@ import { formatViewCount, timeAgo } from "../../utils/reusableFuntions";
 
 const VideoCard = ({ video }) => {
   return (
-    <div className="cursor-pointer">
+    <div className="cursor-pointer relative">
       <img
         src={video.snippet.thumbnails?.medium?.url}
         alt="thumbnail"
@@ -30,7 +30,10 @@ const VideoCard = ({ video }) => {
 
 export const AdVideoCard = ({ video }) => {
   return (
-    <div className=" border-2 border-gray-800">
+    <div className="relative">
+      <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center rounded-lg z-10">
+        <p className="text-white font-bold text-xl">Advertisement</p>
+      </div>
       <VideoCard video={video} />
     </div>
   );

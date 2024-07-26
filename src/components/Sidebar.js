@@ -2,11 +2,14 @@ import React from "react";
 import { TiHome } from "react-icons/ti";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import useWindowSize from "../hooks/useWindowSize";
 
 const Sidebar = () => {
   const isMenuOpen = useSelector((store) => store.app.isMenuOpen);
 
-  if (!isMenuOpen) return null;
+  const size = useWindowSize();
+
+  if (!isMenuOpen || size.width < 600) return null;
 
   return (
     <div className="col-span-1 shadow-lg ">

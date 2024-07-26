@@ -10,7 +10,7 @@ const LiveChat = () => {
   const { chatMessages, userChatMessage, setUserChatMessage } = useLiveChat();
 
   return (
-    <div className="col-span-3 ml-1">
+    <>
       <div className="border-2 h-[600px] bg-gray-50 px-3 p-2 rounded-lg overflow-y-scroll flex flex-col-reverse ">
         {chatMessages.map((c, i) => (
           <ChatMessage key={i} name={c.name} message={c.message} />
@@ -40,7 +40,7 @@ const LiveChat = () => {
           Send
         </button>
       </form>
-    </div>
+    </>
   );
 };
 
