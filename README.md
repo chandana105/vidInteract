@@ -49,10 +49,17 @@ VidInteract is a comprehensive video platform featuring video listings, real-tim
   - UI and Data Structure: This feature combines UI design with data structure concepts, showcasing recursion for rendering comments and their replies.
 
 
-# Screenshots
-<img width="490" alt="Screenshot 2024-07-07 at 7 13 50 PM" src="https://github.com/chandana105/my-youtube/assets/39641650/6648bd6b-714c-4c1f-b3f3-b4cef6717d81">  &nbsp; 
-<img width="490" alt="Screenshot 2024-07-07 at 7 14 04 PM" src="https://github.com/chandana105/my-youtube/assets/39641650/4b24ace2-50dc-42ca-8be0-6a1875d33fdc">  &nbsp;
-<img width="490" alt="Screenshot 2024-07-07 at 7 14 32 PM" src="https://github.com/chandana105/my-youtube/assets/39641650/1452ba24-3ef5-454d-a12c-120272e473d8">  &nbsp;
-<img width="490" alt="Screenshot 2024-07-07 at 7 14 46 PM" src="https://github.com/chandana105/my-youtube/assets/39641650/3135a516-a0d1-402b-b7dd-771dfee2f6c5">  &nbsp; 
+# Screenshots of the app
+
+<img width="490" alt="Screenshot 2024-07-07 at 7 13 50 PM" src="https://github.com/user-attachments/assets/eed547d1-6d65-4577-a826-b0a99bc81f4e">  &nbsp; 
+
+<img width="490" alt="Screenshot 2024-07-07 at 7 14 04 PM" src="https://github.com/user-attachments/assets/05bd7a0b-437e-491a-a178-3e63f2f0ccd3"> &nbsp; 
+
+<img width="490" alt="Screenshot 2024-07-07 at 7 14 32 PM" src="https://github.com/user-attachments/assets/e0911b43-c6fd-4ffb-91a1-6491d07c1baf"> &nbsp;
+
+<img width="490" alt="Screenshot 2024-07-07 at 7 14 46 PM" src="https://github.com/user-attachments/assets/bc9187e1-0c54-44e2-8784-3c9942e627ae">
+
+
+
 
 
